@@ -3,11 +3,6 @@
   padding: 0;
 }
 
-:root {
-  --purpleBG: #8568FF;
-  --purpleFG: #101750;
-}
-
 nav {
   display: flex;
   flex-wrap: wrap;
