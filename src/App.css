@@ -73,7 +73,7 @@ h2 {
 
 .productDetail {
   line-height: 2rem;
-  text-align: justify;
+  text-align: left;
 }
 
 .productCart-button {
@@ -147,4 +147,28 @@ button {
   color: #a9acc6;
   line-height: 1.7;
   font-size: 18px;
+}
+
+/* Top Section */
+.topSection {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--purpleBG);
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.topSection img {
+  max-width: 400px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+}
+
+.topSection p {
+  font-size: 36px;
+  color: #fff;
+  margin-right: 200px;
+  max-width: 500px;
 }

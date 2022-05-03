@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import ProductDetail from "../components/productDetail";
 import LowerSlice from "../components/lowerSliceDetail";
+import Topsection from "../components/topSection";
 const ProductDetailPage = () => {
   const params = useParams();
   const [getProduct, setProduct] = useState([null]);
@@ -22,6 +23,7 @@ const ProductDetailPage = () => {
 
   return (
     <>
+      <Topsection />
       {getProduct ? (
         <ProductDetail
           key={getProduct.id}
