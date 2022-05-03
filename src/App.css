@@ -122,7 +122,7 @@ button {
   flex-direction: column;
   gap: 2rem;
   max-width: 1920px;
-  margin: 100px auto;
+  margin: 0px auto;
   background-color: #f9f8fe;
 }
 
@@ -171,4 +171,31 @@ button {
   color: #fff;
   margin-right: 200px;
   max-width: 500px;
+}
+
+.footer {
+  display: flex;
+  background-color: #0d0e43;
+
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+ul {
+  list-style: none;
+  color: #a9acc6;
+}
+
+.footer p {
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  gap: 30px;
+  line-height: 1.5;
+}
+
+.footer-content svg {
+  color: #a9acc6;
 }

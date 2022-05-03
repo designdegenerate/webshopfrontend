@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ProductDetail from "../components/productDetail";
 import LowerSlice from "../components/lowerSliceDetail";
 import Topsection from "../components/topSection";
+import Footer from "../components/footer";
 const ProductDetailPage = () => {
   const params = useParams();
   const [getProduct, setProduct] = useState([null]);
@@ -37,6 +38,7 @@ const ProductDetailPage = () => {
         <p>Loading...</p>
       )}
       <LowerSlice key={getProduct.id} description={getProduct.description} />
+      <Footer />
     </>
   );
 };
