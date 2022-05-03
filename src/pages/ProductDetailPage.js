@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import ProductDetail from "../components/productDetail";
+import LowerSlice from "../components/lowerSliceDetail";
 const ProductDetailPage = () => {
   const params = useParams();
   const [getProduct, setProduct] = useState([null]);
@@ -28,12 +29,12 @@ const ProductDetailPage = () => {
           image={<img src={getProduct.mainImage} alt="img" />}
           price={getProduct.price}
           rating={getProduct.rating}
-          description={getProduct.description}
           category={getProduct.categorie?.title}
         />
       ) : (
         <p>Loading...</p>
       )}
+      <LowerSlice key={getProduct.id} description={getProduct.description} />
     </>
   );
 };
