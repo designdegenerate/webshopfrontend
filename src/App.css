@@ -44,3 +44,76 @@ nav input[type="text"] {
   display: flex;
   column-gap: 1rem;
 }
+
+/****************************************
+ * Homepage
+ ***************************************/
+
+#homePage {
+  margin: 4rem auto;
+  padding: 1.5rem;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 4rem;
+}
+
+/****************************************
+ * Sidebar
+ ***************************************/
+
+#homePage .sidebar h2 {
+  font-size: 1.25rem;
+}
+
+#homePage .sidebar div + div {
+  margin-top: 2rem;
+}
+
+#homePage .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#homePage .sidebar h2 + ul {
+  margin-top: 0.5rem;
+}
+
+#homePage .sidebar li + li {
+  margin-top: 0.5rem;
+}
+
+/****************************************
+ * Homepage Product List
+ ***************************************/
+
+.productList {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+.productCard {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 300px;
+  border: 1px solid var(--greyBorder);
+  border-radius: 4px;
+}
+
+.productList div img {
+  width: 300px;
+  height: 300px;
+ }
+
+.productList div .productCardContent {
+   display: block;
+   padding: 1rem;
+   max-width: 400px;
+ }
+
+.productCardContent h2 + div {
+  margin-top: 1rem;
+  column-gap: 1rem;
+}
+
