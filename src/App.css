@@ -44,3 +44,21 @@ nav input[type="text"] {
   display: flex;
   column-gap: 1rem;
 }
+
+/* Product Detail Page */
+
+.productCart {
+  display: flex;
+  max-width: 700px;
+  margin: 100px auto;
+  gap: 2rem;
+}
+
+.productCart img {
+  max-width: 200px;
+}
+
+.productDetail {
+  line-height: 1.5rem;
+  text-align: justify;
+}
