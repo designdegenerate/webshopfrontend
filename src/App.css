@@ -101,6 +101,10 @@ nav input[type="text"] {
   border-radius: 4px;
 }
 
+.productCard + .productCard {
+  margin-top: 2rem;
+}
+
 .productList div img {
   width: 300px;
   height: 300px;
