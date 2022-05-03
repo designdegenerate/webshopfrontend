@@ -5,7 +5,7 @@ const ProductList = (props) => {
   return (
     <section className="productList">
       {props.products.map( (product) => {
-        return <ProductCard details={product} />
+        return <ProductCard key={product.id} details={product} />
       })}
     </section>
   );
