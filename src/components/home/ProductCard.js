@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { FiShoppingCart } from "react-icons/fi";
+import { FaRegHeart } from "react-icons/fa";
+import {BsZoomIn} from "react-icons/bs";
 
 const ProductCard = (props) => {
   const { id, title, mainImage, price, rating, description } = props.details;
@@ -17,9 +20,15 @@ const ProductCard = (props) => {
         </div>
         <p className="description">{description}</p>
         <div className="cardButtons">
-          <p>AddToCart</p>
-          <p>Favorite</p>
-          <p>Zoom</p>
+          <button>
+            <FiShoppingCart />
+          </button>
+          <button>
+            <FaRegHeart />
+          </button>
+          <button>
+            <BsZoomIn/>
+          </button>
         </div>
       </div>
     </div>

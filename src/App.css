@@ -183,4 +183,23 @@ nav input[type="text"] {
 
 .cardButtons {
   margin-top: 1rem;
+  display: flex;
+  column-gap: 1rem;
+}
+
+.cardButtons button {
+  border: 0;
+  background: none;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.cardButtons button svg:hover {
+  stroke: var(--purpleBG);
+  fill: var(--purpleBG);
 }
