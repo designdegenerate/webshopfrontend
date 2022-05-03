@@ -1,10 +1,12 @@
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
+const ProductList = (props) => {
+
   return (
     <section className="productList">
-      <ProductCard />
-      <ProductCard />
+      {props.products.map( (product) => {
+        return <ProductCard details={product} />
+      })}
     </section>
   );
 };

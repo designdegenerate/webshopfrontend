@@ -1,8 +1,27 @@
 import ProductList from "../components/home/ProductList";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const Homepage = () => {
+  const [ getProducts, setProducts ] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      let response;
+      try {
+        response = await axios.get(
+          "http://localhost:4000/products"
+        );
+      } catch (error) {
+        console.log(error);
+      }
+      setProducts(response.data);
+    };
+    getData();
+  }, []);
+
   return (
-    <article id='homePage'>
+    <article id="homePage">
       <section className="sidebar">
         <div>
           <h2>Categories</h2>
@@ -20,12 +39,10 @@ const Homepage = () => {
             <li>three stars</li>
           </ul>
         </div>
-
       </section>
-      <ProductList/>
-
+      <ProductList products={getProducts} />
     </article>
-  )
-}
+  );
+};
 
 export default Homepage;

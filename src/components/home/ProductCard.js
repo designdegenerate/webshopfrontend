@@ -1,16 +1,19 @@
-const ProductCard = () => {
+import { Link } from "react-router-dom";
+
+const ProductCard = (props) => {
+  console.log(props.details);
+  const {id, title, mainImage, price, rating, description} = props.details;
   return (
-    <div className="productCard">
-      <img height="300" width="300" alt="" src=""></img>
+    <div key={id} id={id} className="productCard">
+      <img height="300" width="300" alt="" src={mainImage}></img>
       <div className="productCardContent">
-        <h2>Dictum Morbi</h2>
+        <Link to={"/details/" + id}><h2>{title}</h2></Link>
         <div>
-          <p>$26.00</p>
-          <p> * * * *</p>
+          <p>€{price}</p>
+          <p>{rating}</p>
         </div>
         <p>
-          Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget
-          urna mollis ornare vel eu leo.
+          {description}
         </p>
         <div>
           <p>AddToCart</p>
