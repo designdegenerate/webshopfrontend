@@ -6,7 +6,7 @@ import ProductDetail from "../components/productDetail";
 import LowerSlice from "../components/lowerSliceDetail";
 import Topsection from "../components/topSection";
 import Footer from "../components/footer";
-const ProductDetailPage = () => {
+const ProductDetailPage = (props) => {
   const params = useParams();
   const [getProduct, setProduct] = useState([null]);
 
@@ -33,6 +33,8 @@ const ProductDetailPage = () => {
           price={getProduct.price}
           rating={getProduct.rating}
           category={getProduct.categorie?.title}
+          cartSetter={props.cartSetter}
+          cartGetter={props.cartGetter}
         />
       ) : (
         <p>Loading...</p>

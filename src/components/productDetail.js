@@ -14,7 +14,12 @@ const ProductDetail = (props) => {
           </div>
           <p>€{props.price}</p>
           <div className="productCart-button">
-            <button className="button-addToCart">
+            <button
+              className="button-addToCart"
+              onClick={() =>
+                props.cartSetter([...props.cartGetter, props.title])
+              }
+            >
               <FiShoppingCart />
               Add to Cart
             </button>
