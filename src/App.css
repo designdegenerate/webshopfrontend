@@ -44,3 +44,158 @@ nav input[type="text"] {
   display: flex;
   column-gap: 1rem;
 }
+
+/* Product Detail Page */
+
+article {
+  background-color: #e5e5e5;
+}
+
+.productCart {
+  display: flex;
+  max-width: 700px;
+  margin: 100px auto;
+  gap: 2rem;
+}
+
+h2 {
+  font-size: 30px;
+  color: #0d134e;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.productCart img {
+  max-width: 375px;
+  max-height: 487px;
+  margin-top: 40px;
+}
+
+.productDetail {
+  line-height: 2rem;
+  text-align: left;
+}
+
+.productCart-button {
+  display: flex;
+  gap: 1rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.button-addToCart {
+  background-color: #ff3eb2;
+  color: #fff;
+  border-radius: 6px;
+  border-color: #ff3eb2;
+  display: flex;
+  padding: 2.5px;
+  gap: 5px;
+}
+
+.button-favorite {
+  color: #0d134e;
+  border-radius: 6px;
+  border-color: #ff3eb2;
+  display: flex;
+  padding: 2.5px;
+  gap: 5px;
+}
+
+.review {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 30px;
+}
+
+.review p,
+.review button {
+  line-height: 1;
+  color: #151875;
+}
+
+button {
+  padding: 0 10px;
+}
+
+.lowerSlice {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1920px;
+  margin: 0px auto;
+  background-color: #f9f8fe;
+}
+
+.detail-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px;
+  color: #151875;
+}
+
+.detail-options button {
+  border: none;
+  background-color: #f9f8fe;
+  font-size: 24px;
+  color: #151875;
+}
+
+.detail-content {
+  max-width: 1200px;
+  margin: 100px auto;
+  background-color: #f9f8fe;
+  color: #a9acc6;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+/* Top Section */
+.topSection {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--purpleBG);
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.topSection img {
+  max-width: 400px;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+}
+
+.topSection p {
+  font-size: 36px;
+  color: #fff;
+  margin-right: 200px;
+  max-width: 500px;
+}
+
+.footer {
+  display: flex;
+  background-color: #0d0e43;
+
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+ul {
+  list-style: none;
+  color: #a9acc6;
+}
+
+.footer p {
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  gap: 30px;
+  line-height: 1.5;
+}
+
+.footer-content svg {
+  color: #a9acc6;
+}
