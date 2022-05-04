@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 const Homepage = () => {
   const [getProducts, setProducts] = useState([]);
+  const [getCatFilters, setCatFilters] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -18,6 +19,20 @@ const Homepage = () => {
     getData();
   }, []);
 
+  const filterProducts = (cat) => {
+    //Check whether category exists in array,
+    //if it exists, remove it.
+
+    //Otherwise, add it to the array
+
+    //Then, filter using that contents
+    const filtered = getProducts.filter((prod) => {
+      return prod.categoryId === cat;
+    });
+
+    setProducts(filtered);
+  };
+
   return (
     <article id="homePage">
       <section className="sidebar">
@@ -25,11 +40,23 @@ const Homepage = () => {
           <h2>Categories</h2>
           <ul>
             <li>
-              <input id="catElectronics" type="checkbox"></input>
+              <input
+                id="catElectronics"
+                type="checkbox"
+                onChange={() => {
+                  filterProducts(1);
+                }}
+              ></input>
               <label for="catElectronics">Electronics</label>
             </li>
             <li>
-              <input id="catJewelery" type="checkbox"></input>
+              <input
+                id="catJewelery"
+                type="checkbox"
+                onChange={() => {
+                  filterProducts(2);
+                }}
+              ></input>
               <label for="catJewelery">Jewelery</label>
             </li>
             <li>
