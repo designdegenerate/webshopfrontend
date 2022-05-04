@@ -50,14 +50,20 @@ nav input[type="text"] {
  ***************************************/
 
 #homePage {
+width: 100vw;
+background-color: #fff;
+}
+
+#homePageInner {
   margin: 4rem auto;
   padding: 1.5rem;
   max-width: 1000px;
 }
 
 @media (min-width: 800px) {
-  #homePage {
+  #homePageInner {
     margin: 4rem auto;
+    color: #222;
     padding: 1.5rem;
     max-width: 1000px;
     display: grid;
@@ -96,6 +102,7 @@ nav input[type="text"] {
 }
 
 #homePage .sidebar ul {
+  color: #222;
   list-style: none;
   padding: 0;
 }
