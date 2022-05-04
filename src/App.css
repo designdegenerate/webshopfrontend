@@ -101,11 +101,30 @@ nav input[type="text"] {
 }
 
 #homePage .sidebar h2 + ul {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 #homePage .sidebar li + li {
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
+}
+
+/****************************************
+ * Homepage Sidebar categories
+ ***************************************/
+
+#homePage .sidebar input[type="checkbox"] {
+  margin-right: 0.5rem;
+  position: relative;
+  bottom: 0.05rem;
+  cursor: pointer;
+}
+
+#homePage .sidebar li label {
+  margin-right: 0.5rem;
+  position: relative;
+  bottom: 0.05rem;
+  user-select: none;
+  cursor: pointer;
 }
 
 /****************************************
