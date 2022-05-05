@@ -6,25 +6,6 @@ import { TiSocialTwitterCircular } from "react-icons/ti";
 import { IoMdStarOutline } from "react-icons/io";
 
 const ProductDetail = (props) => {
-  // const addToCart = () => {
-  //   //   // check if product in the list
-  //   //   // if in the list, raise amount by 1
-  //   //   // if not in the list, amount should be set to 1
-  //   const product = props.cart.find((item) => item.id === props.id);
-  //   if (product) {
-  //     props.setCart(
-  //       props.cart.map((product) => {
-  //         if (product.id === props.id) {
-  //           return { ...product, amount: product.amount + 1 };
-  //         }
-  //         return { ...product, amount: 1 };
-  //       })
-  //     );
-  //   }
-  // };
-  // console.log(props);
-  // console.log(props.cart);
-
   return (
     <>
       <div className="productCart">

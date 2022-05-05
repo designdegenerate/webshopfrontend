@@ -36,31 +36,37 @@ function App() {
   const removeFromCart = (id) => {
     const newCart = { ...cart };
 
-    if (!cart[id]) return;
+    console.log({ cart: cart[id], id });
 
-    newCart[id] = newCart[id] - 1;
+    if (newCart[id].amount === 1) {
+      delete newCart[id];
+      console.log({ newCart });
+      setCart(newCart);
+      return;
+    }
+    newCart[id].amount = newCart[id].amount - 1;
     setCart(newCart);
   };
-
-  console.log(cart);
 
   return (
     <main className="App">
       <NavBar />
       <article>
         <Routes>
-          <Route path="/Cart" element={<ShoppingCart cart={cart} />}></Route>
-          <Route path="/" element={<Homepage />}></Route>
           <Route
-            path="/details/:id"
-            // element={<ProductDetailPage cart={cart} setCart={setCart} />}
+            path="/Cart"
             element={
-              <ProductDetailPage
+              <ShoppingCart
                 cart={cart}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
               />
             }
+          ></Route>
+          <Route path="/" element={<Homepage />}></Route>
+          <Route
+            path="/details/:id"
+            element={<ProductDetailPage cart={cart} addToCart={addToCart} />}
           />
         </Routes>
       </article>

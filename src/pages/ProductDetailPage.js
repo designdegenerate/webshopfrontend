@@ -34,9 +34,7 @@ const ProductDetailPage = (props) => {
           rating={getProduct.rating}
           category={getProduct.categorie?.title}
           cart={props.cart}
-          // setCart={props.setCart}
           addToCart={props.addToCart}
-          removeFromCart={props.removeFromCart}
         />
       ) : (
         <p>Loading...</p>
