@@ -126,6 +126,25 @@ const Homepage = () => {
                     count={5}
                     size={18}
                     value={5}
+                    isHalf={true}
+                    edit={false}
+                    activeColor="#ffd700"
+                  />
+                </label>
+              </li>
+              <li>
+                <input
+                  // id={props.title}
+                  // key={props.id}
+                  type="checkbox"
+                  // checked={props.checked ? true : false}
+                ></input>
+                <label>
+                  <ReactStars
+                    count={5}
+                    size={18}
+                    value={4.5}
+                    isHalf={true}
                     edit={false}
                     activeColor="#ffd700"
                   />

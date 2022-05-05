@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { BsZoomIn } from "react-icons/bs";
-import StarRating from "../starRating";
 
 const ProductCard = (props) => {
   const { id, title, mainImage, price, rating, description } = props.details;
 
-  
   return (
     <div key={id} id={id} className="productCard">
       <div className="imgWrapper">
@@ -19,10 +18,15 @@ const ProductCard = (props) => {
         </Link>
         <div className="priceRatingsWrapper">
           <p>€{price}</p>
-          <p>
-            Rating: <StarRating stars={rating} />
-            {rating}
-          </p>
+            <ReactStars
+              count={5}
+              size={16}
+              value={parseFloat(rating)}
+              isHalf={true}
+              edit={false}
+              activeColor="#ffd700"
+            />
+          <p>{rating}</p>
         </div>
         <p className="description">{description}</p>
         <div className="cardButtons">

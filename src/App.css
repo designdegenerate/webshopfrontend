@@ -212,6 +212,10 @@ nav input[type="text"] {
   font-size: 0.9rem;
 }
 
+.priceRatingsWrapper div {
+  margin-top: -.75px;
+}
+
 .description {
   margin-top: 1rem;
   color: var(--lightGrey);
