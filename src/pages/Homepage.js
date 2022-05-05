@@ -38,8 +38,6 @@ const Homepage = () => {
       } catch (error) {
         console.log(error);
       }
-      //set data to two use states, the first
-      //will always be untouched, the 2nd will
       setProducts(response.data);
     };
 
@@ -66,13 +64,6 @@ const Homepage = () => {
       <Topsection />
       <div id="homePageInner">
         <section className="sidebar">
-          <button
-            onClick={() => {
-              console.log("hello");
-            }}
-          >
-            log
-          </button>
           <div>
             <h2>Categories</h2>
             <ul>
