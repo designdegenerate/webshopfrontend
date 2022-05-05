@@ -17,6 +17,7 @@ const ShoppingCart = ({ cart, removeFromCart, addToCart }) => {
     <>
       <div className="shopping-cart">
         <h2>Shopping cart</h2>
+        <h3>Product</h3>
         {filteredCart
           ? filteredCart.map((item) => (
               <div className="shoppingCart-content">
@@ -31,8 +32,13 @@ const ShoppingCart = ({ cart, removeFromCart, addToCart }) => {
                   <p>{item.title}</p>
                   <p>Price: €{item.price}</p>
                   <p>Quantity: {item.amount}</p>
-                  <p>Total: €{item.price * item.amount}</p>
-                  <div style={{ display: "flex" }}>
+                  <p>
+                    Total: €{parseFloat(item.price * item.amount).toFixed(2)}
+                  </p>
+                  <div
+                    className="shoppingcart-button"
+                    style={{ display: "flex" }}
+                  >
                     <button onClick={() => removeFromCart(item.id)}>-</button>
                     {item.amount || 1}
                     <button onClick={() => addToCart(item)}>+</button>

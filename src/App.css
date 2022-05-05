@@ -387,8 +387,7 @@ button {
 .footer {
   display: flex;
   background-color: #0d0e43;
-
-  padding: 40px 10px;
+  padding: 70px 10px;
   justify-content: space-evenly;
 }
 
@@ -402,7 +401,7 @@ ul {
 }
 
 .footer-content {
-  padding-left: 70px;
+  padding-left: 180px;
   display: flex;
   gap: 60px;
   line-height: 2;
@@ -420,14 +419,16 @@ ul {
   display: flex;
   gap: 4px;
 }
+
 /* Shopping Cart */
 
 .shopping-cart {
   padding: 20px;
+  min-height: 600px;
 }
 
 .shopping-cart-image {
-  max-width: 150px;
+  max-width: 200px;
 }
 .shoppingCart-content {
   display: flex;
@@ -438,10 +439,18 @@ ul {
   background-color: #e7e7f1;
   border-radius: 7px;
   margin: 10px;
+  max-width: 800px;
 }
 .shopping-cart h2 {
   display: flex;
   font-size: 30px;
+
+  padding: 20px;
+}
+
+.shopping-cart h3 {
+  display: flex;
+  font-size: 15px;
 
   padding: 20px;
 }
@@ -451,4 +460,8 @@ ul {
   flex-direction: column;
   gap: 10px;
   line-height: 30px;
+}
+
+.shoppingcart-button {
+  gap: 7px;
 }
