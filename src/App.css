@@ -134,6 +134,15 @@ nav input[type="text"] {
   cursor: pointer;
 }
 
+
+/****************************************
+ * Homepage Sidebar Ratings
+ ***************************************/
+
+.ratingsSidebar li {
+  display: flex;
+}
+
 /****************************************
  * Homepage Product List + Card
  ***************************************/

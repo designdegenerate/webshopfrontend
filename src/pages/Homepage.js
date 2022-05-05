@@ -1,6 +1,7 @@
 import ProductList from "../components/home/ProductList";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import ReactStars from "react-rating-stars-component";
 import Footer from "../components/footer";
 import Topsection from "../components/topSection";
 import CategoryFilterLi from "../components/home/CategoryFilterLi";
@@ -26,6 +27,33 @@ const Homepage = () => {
     {
       id: 4,
       title: "WomensClothing",
+      checked: false,
+    },
+  ]);
+  const [getRatingFilter, setRatingFilter] = useState([
+    {
+      id: 1,
+      stars: 1,
+      checked: false,
+    },
+    {
+      id: 1,
+      stars: 1,
+      checked: false,
+    },
+    {
+      id: 1,
+      stars: 1,
+      checked: false,
+    },
+    {
+      id: 1,
+      stars: 1,
+      checked: false,
+    },
+    {
+      id: 1,
+      stars: 1,
       checked: false,
     },
   ]);
@@ -59,6 +87,9 @@ const Homepage = () => {
     setCatFilters(updatedArray);
   };
 
+  const arrow = () => true;
+
+
   return (
     <div id="homePage">
       <Topsection />
@@ -80,21 +111,35 @@ const Homepage = () => {
               })}
             </ul>
           </div>
-          {/* <div>
+          <div>
             <h2>Rating</h2>
-            <ul>
+            <ul className="ratingsSidebar">
+              <li>
+                <input
+                  // id={props.title}
+                  // key={props.id}
+                  type="checkbox"
+                  // checked={props.checked ? true : false}
+                ></input>
+                <label>
+                  <ReactStars
+                    count={5}
+                    size={18}
+                    value={5}
+                    edit={false}
+                    activeColor="#ffd700"
+                  />
+                </label>
+              </li>
               <li>five stars</li>
               <li>four stars</li>
               <li>three stars</li>
               <li>two stars</li>
               <li>one star</li>
             </ul>
-          </div> */}
+          </div>
         </section>
-        <ProductList 
-          filter={getCatFilters} 
-          products={getProducts}
-        />
+        <ProductList filter={getCatFilters} products={getProducts} />
       </div>
       <Footer />
     </div>

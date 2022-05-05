@@ -6,6 +6,8 @@ import StarRating from "../starRating";
 
 const ProductCard = (props) => {
   const { id, title, mainImage, price, rating, description } = props.details;
+
+  
   return (
     <div key={id} id={id} className="productCard">
       <div className="imgWrapper">
