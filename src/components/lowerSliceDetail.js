@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const LowerSlice = (props) => {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("Description");
   return (
     <div className="lowerSlice">
       <div className="detail-options">

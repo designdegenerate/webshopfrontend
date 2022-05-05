@@ -6,7 +6,7 @@ import ProductDetail from "../components/productDetail";
 import LowerSlice from "../components/lowerSliceDetail";
 import Topsection from "../components/topSection";
 import Footer from "../components/footer";
-const ProductDetailPage = () => {
+const ProductDetailPage = (props) => {
   const params = useParams();
   const [getProduct, setProduct] = useState([null]);
 
@@ -20,7 +20,6 @@ const ProductDetailPage = () => {
     };
     FetchData();
   }, []);
-  console.log(getProduct);
 
   return (
     <>
@@ -28,11 +27,14 @@ const ProductDetailPage = () => {
       {getProduct ? (
         <ProductDetail
           key={getProduct.id}
+          id={getProduct.id}
           title={getProduct.title}
           image={<img src={getProduct.mainImage} alt="img" />}
           price={getProduct.price}
           rating={getProduct.rating}
           category={getProduct.categorie?.title}
+          cart={props.cart}
+          addToCart={props.addToCart}
         />
       ) : (
         <p>Loading...</p>
