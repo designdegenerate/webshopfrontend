@@ -20,7 +20,6 @@ const ProductDetailPage = (props) => {
     };
     FetchData();
   }, []);
-  console.log(getProduct);
 
   return (
     <>
@@ -28,13 +27,16 @@ const ProductDetailPage = (props) => {
       {getProduct ? (
         <ProductDetail
           key={getProduct.id}
+          id={getProduct.id}
           title={getProduct.title}
           image={<img src={getProduct.mainImage} alt="img" />}
           price={getProduct.price}
           rating={getProduct.rating}
           category={getProduct.categorie?.title}
-          cartSetter={props.cartSetter}
-          cartGetter={props.cartGetter}
+          cart={props.cart}
+          // setCart={props.setCart}
+          addToCart={props.addToCart}
+          removeFromCart={props.removeFromCart}
         />
       ) : (
         <p>Loading...</p>

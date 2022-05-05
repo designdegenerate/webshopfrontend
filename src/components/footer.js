@@ -5,7 +5,7 @@ import { TiSocialTwitterCircular } from "react-icons/ti";
 const Footer = () => {
   return (
     <div className="footer">
-      <p>TheShop</p>
+      <p className="theshop">TheShop</p>
       <div className="footer-content">
         <div>
           <p>Categories</p>
@@ -26,11 +26,13 @@ const Footer = () => {
             <li>Order Tracking</li>
           </ul>
         </div>
-        <div>
+        <div className="followus">
           <p>Follow us</p>
-          <RiFacebookCircleLine />
-          <IoLogoInstagram />
-          <TiSocialTwitterCircular />
+          <div className="svg">
+            <RiFacebookCircleLine />
+            <IoLogoInstagram />
+            <TiSocialTwitterCircular />
+          </div>
         </div>
       </div>
     </div>
