@@ -3,7 +3,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { RiFacebookCircleLine } from "react-icons/ri";
 import { IoLogoInstagram } from "react-icons/io";
 import { TiSocialTwitterCircular } from "react-icons/ti";
-import { IoMdStarOutline } from "react-icons/io";
+
+import StarRating from "./starRating";
 
 const ProductDetail = (props) => {
   return (
@@ -15,7 +16,7 @@ const ProductDetail = (props) => {
           <div className="review">
             <p className="rating">
               <div className="stars">
-                <IoMdStarOutline /> <IoMdStarOutline /> <IoMdStarOutline />
+                <StarRating stars={props.rating} />
               </div>{" "}
               {props.rating}
             </p>
