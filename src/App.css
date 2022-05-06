@@ -536,3 +536,18 @@ ul {
 .total-amount {
   margin-left: 20px;
 }
+
+.shopping-cart-icon {
+  display: flex;
+  gap: 4px;
+}
+.shopping-cart-icon-accumulator {
+  color: #af195a;
+  font-size: 0.8rem;
+  font-weight: 900;
+  position: relative;
+  bottom: 11px;
+  left: -6px;
+  border-radius: 50%;
+  padding: 2px;
+}

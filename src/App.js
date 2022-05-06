@@ -50,7 +50,7 @@ function App() {
 
   const totalAmount = Object.values(cart).reduce((acc, cartItem) => {
     return cartItem.amount + acc;
-  }, 0);
+  }, null);
 
   return (
     <main className="App">

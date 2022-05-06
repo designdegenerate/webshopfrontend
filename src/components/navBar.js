@@ -28,8 +28,10 @@ const NavBar = (props) => {
           <FaRegUser />
         </Link>
         <Link to="/Cart">
-          <FiShoppingCart />
-          {props.amount}
+          <div className="shopping-cart-icon">
+            <FiShoppingCart />
+            <div className="shopping-cart-icon-accumulator">{props.amount}</div>
+          </div>
         </Link>
         <Link to="/Favorite">
           <FaRegHeart />
