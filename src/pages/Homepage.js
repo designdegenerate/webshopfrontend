@@ -1,9 +1,11 @@
 import ProductList from "../components/home/ProductList";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import ReactStars from "react-rating-stars-component";
 import Footer from "../components/footer";
 import Topsection from "../components/topSection";
 import CategoryFilterLi from "../components/home/CategoryFilterLi";
+import RatingsFilterLi from "../components/ratingsFilterLi";
 
 const Homepage = () => {
   const [getProducts, setProducts] = useState([]);
@@ -26,6 +28,28 @@ const Homepage = () => {
     {
       id: 4,
       title: "WomensClothing",
+      checked: false,
+    },
+  ]);
+  const [getRatingFilter, setRatingFilter] = useState([
+    {
+      stars: 0,
+      checked: true,
+    },
+    {
+      stars: 1,
+      checked: false,
+    },
+    {
+      stars: 2,
+      checked: false,
+    },
+    {
+      stars: 3,
+      checked: false,
+    },
+    {
+      stars: 4,
       checked: false,
     },
   ]);
@@ -59,6 +83,24 @@ const Homepage = () => {
     setCatFilters(updatedArray);
   };
 
+  const updateRatingFilter = (stars) => {
+    //Mark the checkbox on/off
+    const updatedArray = getRatingFilter.map((rating) => {
+      if (rating.stars === stars) {
+        return {
+          ...rating,
+          checked: true,
+        };
+      }
+      return {
+        ...rating,
+        checked: false,
+      };
+    });
+
+    setRatingFilter(updatedArray);
+  };
+
   return (
     <div id="homePage">
       <Topsection />
@@ -80,19 +122,25 @@ const Homepage = () => {
               })}
             </ul>
           </div>
-          {/* <div>
+          <div>
             <h2>Rating</h2>
-            <ul>
-              <li>five stars</li>
-              <li>four stars</li>
-              <li>three stars</li>
-              <li>two stars</li>
-              <li>one star</li>
+            <ul className="ratingsSidebar">
+              {getRatingFilter.map((rating) => {
+                return (
+                  <RatingsFilterLi
+                    key={rating.stars}
+                    checked={rating.checked}
+                    callbackfn={updateRatingFilter}
+                    value={rating.stars}
+                  />
+                );
+              })}
             </ul>
-          </div> */}
+          </div>
         </section>
-        <ProductList 
-          filter={getCatFilters} 
+        <ProductList
+          ratings={getRatingFilter}
+          filter={getCatFilters}
           products={getProducts}
         />
       </div>

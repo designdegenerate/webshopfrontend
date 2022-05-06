@@ -1,3 +1,4 @@
+import RatingsFilterLi from "../ratingsFilterLi";
 import ProductCard from "./ProductCard";
 
 const ProductList = (props) => {
@@ -12,7 +13,18 @@ const ProductList = (props) => {
     filteredFilters = props.filter.filter( filter => filter.checked === true);
   };
 
+  const minRating = () => {
+    const ratingObj = props.ratings.find( rating => rating.checked);
+
+    return ratingObj.stars;
+
+  }
+
   filterTheFilters();
+
+  // Look trough the ratings filter
+  // get the highest number
+  // Show products where rating is at least that number
 
   return (
     <section className="productList">
@@ -23,6 +35,12 @@ const ProductList = (props) => {
         if (
           filteredFilters.find(filter => filter.id == product.categoryId)
         ) return product
+
+      })
+      .filter( (product) => {
+
+        return parseFloat(product.rating) > minRating();
+
 
       })
       .map((product) => {
