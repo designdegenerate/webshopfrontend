@@ -5,6 +5,7 @@ import ReactStars from "react-rating-stars-component";
 import Footer from "../components/footer";
 import Topsection from "../components/topSection";
 import CategoryFilterLi from "../components/home/CategoryFilterLi";
+import RatingsFilterLi from "../components/ratingsFilterLi";
 
 const Homepage = () => {
   const [getProducts, setProducts] = useState([]);
@@ -32,28 +33,19 @@ const Homepage = () => {
   ]);
   const [getRatingFilter, setRatingFilter] = useState([
     {
-      id: 1,
       stars: 1,
       checked: false,
     },
     {
-      id: 1,
-      stars: 1,
+      stars: 2,
       checked: false,
     },
     {
-      id: 1,
-      stars: 1,
+      stars: 3,
       checked: false,
     },
     {
-      id: 1,
-      stars: 1,
-      checked: false,
-    },
-    {
-      id: 1,
-      stars: 1,
+      stars: 4,
       checked: false,
     },
   ]);
@@ -87,8 +79,20 @@ const Homepage = () => {
     setCatFilters(updatedArray);
   };
 
-  const arrow = () => true;
+  const updateRatingFilter = (stars) => {
+    //Mark the checkbox on/off
+    const updatedArray = getRatingFilter.map((rating) => {
+      if (rating.stars === stars) {
+        return {
+          ...rating,
+          checked: !rating.checked,
+        };
+      }
+      return rating;
+    });
 
+    setRatingFilter(updatedArray);
+  };
 
   return (
     <div id="homePage">
@@ -114,47 +118,15 @@ const Homepage = () => {
           <div>
             <h2>Rating</h2>
             <ul className="ratingsSidebar">
-              <li>
-                <input
-                  // id={props.title}
-                  // key={props.id}
-                  type="checkbox"
-                  // checked={props.checked ? true : false}
-                ></input>
-                <label>
-                  <ReactStars
-                    count={5}
-                    size={18}
-                    value={5}
-                    isHalf={true}
-                    edit={false}
-                    activeColor="#ffd700"
+              {getRatingFilter.map((rating) => {
+                return (
+                  <RatingsFilterLi
+                    checked={rating.checked}
+                    callbackfn={updateRatingFilter}
+                    value={rating.stars}
                   />
-                </label>
-              </li>
-              <li>
-                <input
-                  // id={props.title}
-                  // key={props.id}
-                  type="checkbox"
-                  // checked={props.checked ? true : false}
-                ></input>
-                <label>
-                  <ReactStars
-                    count={5}
-                    size={18}
-                    value={4.5}
-                    isHalf={true}
-                    edit={false}
-                    activeColor="#ffd700"
-                  />
-                </label>
-              </li>
-              <li>five stars</li>
-              <li>four stars</li>
-              <li>three stars</li>
-              <li>two stars</li>
-              <li>one star</li>
+                );
+              })}
             </ul>
           </div>
         </section>
