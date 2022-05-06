@@ -50,8 +50,8 @@ nav input[type="text"] {
  ***************************************/
 
 #homePage {
-width: 100vw;
-background-color: #fff;
+  width: 100vw;
+  background-color: #fff;
 }
 
 #homePageInner {
@@ -430,6 +430,8 @@ ul {
 /* Shopping Cart */
 
 .shopping-cart {
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   min-height: 600px;
 }
@@ -439,6 +441,7 @@ ul {
 }
 .shoppingCart-content {
   display: flex;
+
   padding: 20px;
   gap: 10px;
   box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.1);
@@ -466,9 +469,35 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  line-height: 30px;
+  line-height: 40px;
+  color: #1d3178;
 }
 
 .shoppingcart-button {
   gap: 7px;
+}
+.cart-total {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #e7e7f1;
+  border-radius: 7px;
+  margin: 10px;
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  top: 245px;
+  left: 1100px;
+  align-items: center;
+  justify-content: center;
+  color: #1d3178;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: 700;
 }

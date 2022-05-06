@@ -1,10 +1,11 @@
+import { IoMdTennisball } from "react-icons/io";
 import Footer from "./footer";
 const ShoppingCart = ({ cart, removeFromCart, addToCart }) => {
   const getCart = Object.values(cart);
   const productsIds = getCart.map((p) => p.id);
   //   console.log("product id", productsIds);
   const filteredCart = getCart.filter((p) => productsIds.includes(p.id));
-  //   console.log("filteredcart", filteredCart);
+  console.log("filteredcart", filteredCart);
   //turn object to the array
   // {7: 12, 5: 3}
   // [{id: 7, amount: 12}]
@@ -12,6 +13,17 @@ const ShoppingCart = ({ cart, removeFromCart, addToCart }) => {
   // products.filter(product => proudcts.ids.includes(product.id))
 
   //   console.log(cart);
+
+  // let sum = null;
+  // const totalCart = filteredCart?.forEach(
+  //   (item) => (sum += item.price * item.amount)
+  // );
+
+  const totalAmount = filteredCart?.reduce((acc, item) => {
+    return item.price * item.amount + acc;
+  }, 0);
+
+  // console.log("total cart is", totalAmount);
 
   return (
     <>
@@ -32,7 +44,7 @@ const ShoppingCart = ({ cart, removeFromCart, addToCart }) => {
                   <p>{item.title}</p>
                   <p>Price: €{item.price}</p>
                   <p>Quantity: {item.amount}</p>
-                  <p>
+                  <p className="total">
                     Total: €{parseFloat(item.price * item.amount).toFixed(2)}
                   </p>
                   <div
@@ -47,6 +59,7 @@ const ShoppingCart = ({ cart, removeFromCart, addToCart }) => {
               </div>
             ))
           : []}
+        <div className="cart-total">Cart Total: €{totalAmount}</div>
       </div>
       <Footer />
     </>
