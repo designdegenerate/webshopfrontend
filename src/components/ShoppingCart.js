@@ -1,4 +1,4 @@
-import { IoMdTennisball } from "react-icons/io";
+import { AiOutlineCheckCircle } from "react-icons/ai";
 import Footer from "./footer";
 const ShoppingCart = ({ cart, removeFromCart, addToCart }) => {
   const getCart = Object.values(cart);
@@ -59,7 +59,16 @@ const ShoppingCart = ({ cart, removeFromCart, addToCart }) => {
               </div>
             ))
           : []}
-        <div className="cart-total">Cart Total: €{totalAmount}</div>
+        <div className="cart-total">
+          <p>
+            Cart Total: <span className="total-amount">€{totalAmount}</span>
+          </p>
+          <div>
+            <AiOutlineCheckCircle />
+            Shipping & taxes calculated at checkout
+          </div>
+          <button>Proceed To Checkout</button>
+        </div>
       </div>
       <Footer />
     </>

@@ -48,9 +48,13 @@ function App() {
     setCart(newCart);
   };
 
+  const totalAmount = Object.values(cart).reduce((acc, cartItem) => {
+    return cartItem.amount + acc;
+  }, 0);
+
   return (
     <main className="App">
-      <NavBar />
+      <NavBar amount={totalAmount} />
       <article>
         <Routes>
           <Route

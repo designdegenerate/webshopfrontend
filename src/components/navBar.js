@@ -4,13 +4,11 @@ import { FaRegHeart } from "react-icons/fa";
 
 const { Link } = require("react-router-dom");
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <nav>
       <ul>
-        <li>
-          TheShop
-        </li>
+        <li>TheShop</li>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -31,6 +29,7 @@ const NavBar = () => {
         </Link>
         <Link to="/Cart">
           <FiShoppingCart />
+          {props.amount}
         </Link>
         <Link to="/Favorite">
           <FaRegHeart />
