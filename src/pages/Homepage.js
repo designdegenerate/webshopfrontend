@@ -33,6 +33,10 @@ const Homepage = () => {
   ]);
   const [getRatingFilter, setRatingFilter] = useState([
     {
+      stars: 0,
+      checked: true,
+    },
+    {
       stars: 1,
       checked: false,
     },
@@ -85,10 +89,13 @@ const Homepage = () => {
       if (rating.stars === stars) {
         return {
           ...rating,
-          checked: !rating.checked,
+          checked: true,
         };
       }
-      return rating;
+      return {
+        ...rating,
+        checked: false,
+      };
     });
 
     setRatingFilter(updatedArray);
@@ -121,6 +128,7 @@ const Homepage = () => {
               {getRatingFilter.map((rating) => {
                 return (
                   <RatingsFilterLi
+                    key={rating.stars}
                     checked={rating.checked}
                     callbackfn={updateRatingFilter}
                     value={rating.stars}
@@ -130,7 +138,11 @@ const Homepage = () => {
             </ul>
           </div>
         </section>
-        <ProductList filter={getCatFilters} products={getProducts} />
+        <ProductList
+          ratings={getRatingFilter}
+          filter={getCatFilters}
+          products={getProducts}
+        />
       </div>
       <Footer />
     </div>
